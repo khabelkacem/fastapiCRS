@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href="{{ url_for('static', path='/main.css') }}" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Test</title>
+</head>
+
+<body>
+ <center>
+
+ 
+
+  <h1>5 Most simular Tech Courses in Udemy Platform:</h1>
+  <table class="styled-table">
+    <thead>
+    <tr>
+      <th>Index</th>
+      <th>Title</th>
+      <th>Summaray</th>
+      <th>Enrollment</th>
+      <th>Stars</th>
+      <th>Rating</th>
+      <th>Link</th>
+    </tr>
+   </thead>
+   <tbody>
+  {% for line in result %}
+  <tr>
+    <td>{{line.index}}</td>
+    <td>{{line.Title}}</td>
+    <td>{{line.Summary}}</td>
+    <td>{{line.Enrollment}}</td>
+    <td>{{line.Stars}}</td>
+    <td>{{line.Rating}}</td>
+    <td><a href="{{line.Link}}">{{line.Link}}</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href="{{ url_for('static', path='/main.css') }}" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Test</title>
+</head>
+
+<body>
+ <center>
+
+ 
+
+  <form id="uploadform" action="/formSubmit"  method="post">
+    <table>
+      <tr>
+        <td><label for="course_title">Enter a title:</label></td>
+        <td><input type="text" size="50" id="course_title" name="title" value="HTML and CSS: A Guide to Web Design"></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right"><input type="submit"> </td>
+      </tr>
+    </table>
+    
+  </form> 
+
+  <h1>5 Most simular Tech Courses in Udemy Platform:</h1>
+  <table class="styled-table">
+    <thead>
+    <tr>
+      <th>Index</th>
+      <th>Title</th>
+      <th>Summaray</th>
+      <th>Enrollment</th>
+      <th>Stars</th>
+      <th>Rating</th>
+      <th>Link</th>
+    </tr>
+   </thead>
+   <tbody>
+  {% for line in result %}
+  <tr>
+    <td>{{line.index}}</td>
+    <td>{{line.Title}}</td>
+    <td>{{line.Summary}}</td>
+    <td>{{line.Enrollment}}</td>
+    <td>{{line.Stars}}</td>
+    <td>{{line.Rating}}</td>
+    <td><a href="{{line.Link}}">{{line.Link}}</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</center>
+</body>
+</html>
