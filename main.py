@@ -55,5 +55,6 @@ async def form_post(request: Request,title: str = Form(...)):
      #   result="{\"error\":500, \"detail\":\"KeyError: invalid course title\" }"
       #  return templates.TemplateResponse('error.html', context={'request': request, 'result': result})
 
-#if __name__ == "__main__":
- #   uvicorn.run("main:app", host="127.0.0.1", port=8888, reload=True)
+if __name__ == "__main__":
+    #uvicorn.run("main:app", host="127.0.0.1", port=8888, reload=True)
+    app.run()
