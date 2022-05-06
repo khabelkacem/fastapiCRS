@@ -48,13 +48,9 @@ async def recommand(title):
 
 @app.post("/formSubmit")
 async def form_post(request: Request,title: str = Form(...)):
-    #try:
         result = fastapi_RSC(title)
         return templates.TemplateResponse('index.html', context={'request': request, 'result': result})
-    #except KeyError:
-     #   result="{\"error\":500, \"detail\":\"KeyError: invalid course title\" }"
-      #  return templates.TemplateResponse('error.html', context={'request': request, 'result': result})
-
+    
 if __name__ == "__main__":
-    #uvicorn.run("main:app", host="127.0.0.1", port=8888, reload=True)
-    app.run()
+    uvicorn.run("main:app", host="0.0.0.0", port=8888, reload=True)
+    
